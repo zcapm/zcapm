@@ -10,7 +10,9 @@
 
 #### directly download or download via terminal
 
-1. Click `Code` and choose `Download ZIP` and unzip the file. Or use the command line `git clone https://github.com/zcapm/zcapm.git` in terminal. 
+1. Click `Code` and choose `Download ZIP` and unzip the file. 
+   
+   Or use the command line `git clone https://github.com/zcapm/zcapm.git` in terminal. 
 
 2. Open the terminal and go to the directory contains the `ZCAPM` folder.
 
