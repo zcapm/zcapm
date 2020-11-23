@@ -37,7 +37,6 @@ fm_test <- function(port.exc.ret.month, fact.load.lst, subsample = NULL){
   variable_names <- vector("list", n_model)
   coef.monroll.m <- vector("list", n_model)
   tval.monroll.m <- vector("list", n_model)
-  # Summary.models <- vector("list", n_model)
   Summary.tab <- vector("list", n_model)
   r2.m <- rep(0.0, n_model)
 
@@ -62,21 +61,18 @@ fm_test <- function(port.exc.ret.month, fact.load.lst, subsample = NULL){
 
     Summary.tab[[i]] <- cbind(t(coef.monroll.m[[i]]), t(tval.monroll.m[[i]]))
     colnames(Summary.tab[[i]]) <- c("coefficient", "t.value")
+    rownames(Summary.tab[[i]])[1] <- "Intercept"
 
     # Single regression approach for ZCAPM_ini with alpha.ini = mean(y-signal)
     r2.m[i] <- SingleReg(port.exc.ret.avg, fact.load.m, num.mod, idx.month)
-
-    # Summary.models[[i]] <- list(coeffs = coef.monroll.m[[i]], tval = tval.monroll.m[[i]], r2 = r2.m[[i]])
   }
-
-  names(Summary.models) <- model_names
 
   # output
   res <- list(Summary.models = Summary.tab,
               r2 = r2.m,
               model.names = model_names,
               variables = variable_names)
-              # Summary.models = Summary.models)
+              num.mod = num.mod)
   return(res)
 }
 
