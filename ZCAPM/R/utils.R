@@ -170,16 +170,24 @@ SingleReg <- function(port.exc.ret.avg, fact.load, num.mod, idx.month){
 print.summary <- function(object,
                           digits = max(4L, getOption("digits")), ...){
   n_model <- length(object$r2)
+  num.mod <- object$num.mod
   r2 <- object$r2
   model.names <- object$model.names
   variables <- object$variables
   coefficients.table <- object$Summary.models
+  maxlength <- max(nchar(paste("Model: ", model.names)))
   for (i in 1:n_model){
     cat("\nModel: ", model.names[[i]])
     cat("\nVariables Included: ", variables[[i]])
-    cat("\nCoefficients: \n")
+    cat("\nNumber of periods includes:",  num.mod, "\n")
+    cat("\nMonthly rolling approach: \n")
     printCoefmat(coefficients.table[[i]], digits = digits)
+    cat("\nSingle regression approach: \n")
     cat("R-squared: ", r2[i], "\n")
+    if(i < n_model){
+      cat("\n")
+      cat(rep("=", maxlength), "\n")
+    }
   }
 }
 
