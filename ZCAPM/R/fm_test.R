@@ -71,7 +71,7 @@ fm_test <- function(port.exc.ret.month, fact.load.lst, subsample = NULL){
   res <- list(Summary.models = Summary.tab,
               r2 = r2.m,
               model.names = model_names,
-              variables = variable_names)
+              variables = variable_names,
               num.mod = num.mod)
   return(res)
 }
