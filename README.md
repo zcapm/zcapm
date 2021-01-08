@@ -27,7 +27,7 @@ or with the help of `devtools` package:
 
 * Type `R CMD INSTALL ZCAPM_0.1.0.tar.gz` or use `install.packages(path_to_the_tar.gz_file, type = "source")` in R.
 
-2'. For a windows user, installation can be done with the help of `devtools`. 
+3. For a Windows user, 
 
 
 ### Example
