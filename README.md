@@ -5,9 +5,7 @@
 ### Install package
 #### Via R/Rstudio
 
-* Type the following command in the R console: 
-
-*   `remotes::install_github("zcapm/zcapm/ZCAPM")`
+* Type the following command in the R console: `remotes::install_github("zcapm/zcapm/ZCAPM")`
 
 or with the help of `devtools` package:
 
