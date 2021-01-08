@@ -2,11 +2,17 @@
 ### Install package
 #### via R/Rstudio
 
-`install.packages("devtools")`
+Type the following command in the R console: 
 
-`library(devtools)`
+* `remotes::install_github("zcapm/zcapm/ZCAPM")`
+
+or with the help of `devtools` package:
+
+1. `install.packages("devtools")`
+
+2. `library(devtools)`
  
-`install_github("zcapm/zcapm/ZCAPM")`
+3. `install_github("zcapm/zcapm/ZCAPM")`
 
 #### directly download or download via terminal
 
