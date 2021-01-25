@@ -193,7 +193,7 @@ ZCAPM <- function(port.exc.ret, month.list, roll.width, yyyymm, factors, params)
 #' colnames(data.factors) <- c("p1", "p2")
 #' intercept_include <- FALSE
 #' FactorModel(y, month.list.test, test.width, test.yyyymm, data.factors, intercept_include)
-FactorModel <- function(port.exc.ret, month.list, roll.width, yyyymm, factors, intercept_include){
+FactorModel <- function(port.exc.ret, month.list, roll.width, yyyymm, factors, intercept_include = FALSE){
   if(is.vector(port.exc.ret)){
     port.exc.ret <- matrix(port.exc.ret, length(port.exc.ret), 1)
   }
