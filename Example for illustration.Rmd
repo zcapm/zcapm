@@ -68,7 +68,6 @@ port.exc.ret.month <- aggregate(data.port.exc.ret, by = list(yyyymm = data.yyyym
 roll.width <- 12
 tol <- 0.001
 MaxIter <- 1000
-intercept_include <- FALSE
 criterion <- 1
 params <- c(tol, MaxIter, criterion)
 
@@ -85,8 +84,8 @@ month.list.est <- month.list[-length(month.list)]
 zcapm.res <- ZCAPM(data.port.exc.ret, month.list.est, roll.width, data.yyyymm, data.factor[, c("R_a.R_f", "sigma_a")], params)
 
 # capm and 3-factor model
-capm.res <- FactorModel(data.port.exc.ret, month.list.est, roll.width, data.yyyymm, data.frame(R_a.R_f = data.factor[, "R_a.R_f"]), intercept_include)
-ff3.res <- FactorModel(data.port.exc.ret, month.list.est, roll.width, data.yyyymm, data.factor[, c("R_a.R_f", "SMB", "HML")], intercept_include)
+capm.res <- FactorModel(data.port.exc.ret, month.list.est, roll.width, data.yyyymm, data.frame(R_a.R_f = data.factor[, "R_a.R_f"]))
+ff3.res <- FactorModel(data.port.exc.ret, month.list.est, roll.width, data.yyyymm, data.factor[, c("R_a.R_f", "SMB", "HML")])
 
 # adjustment to the zeta's of zcapm
 num.mod <- nrow(zcapm.res$factor.loading) / 2
