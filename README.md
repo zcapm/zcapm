@@ -15,7 +15,7 @@ or with the help of `devtools` package:
 
 
 ### Example
-The `example.Rmd` file in this repository can be used as an example to illustrate the usage of the pacakge.
+The `Example for illustration.Rmd` file in this repository can be used as an example to illustrate the usage of the pacakge.
 
 <!--
 **zcapm/zcapm** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
