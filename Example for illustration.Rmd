@@ -68,7 +68,11 @@ port.exc.ret.month <- aggregate(data.port.exc.ret, by = list(yyyymm = data.yyyym
 roll.width <- 12
 tol <- 0.001
 MaxIter <- 1000
-criterion <- 1
+
+# criterion = 1: if 'abs(diff(new - old)/old)' is used as convergence criterion
+# criterion = 2: if 'abs(diff(new - old)/(abs(old) + 1))' is used as the convergence criterion
+# criterion = 2 usually leads to better convergence
+criterion <- 1  
 params <- c(tol, MaxIter, criterion)
 
 # keep only the one-month ahead monthly return in testing period
